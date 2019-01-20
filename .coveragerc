@@ -1,0 +1,5 @@
+[run]
+include = learn_islam/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
