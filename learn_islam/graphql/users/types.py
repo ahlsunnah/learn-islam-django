@@ -1,4 +1,4 @@
-from give_core.users.models import User
+from learn_islam.users.models import User
 from graphene_django.types import DjangoObjectType
 
 
