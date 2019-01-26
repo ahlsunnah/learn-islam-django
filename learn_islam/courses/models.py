@@ -32,7 +32,7 @@ class CourseTranslation(models.Model):
     )
     description = models.CharField(_("Description"), blank=True, max_length=500)
     locale = models.CharField(max_length=10)
-    title = models.CharField(_("Title"), max_length=20)
+    title = models.CharField(_("Title"), max_length=200)
 
     class Meta:
         unique_together = (('locale', 'course'),)
