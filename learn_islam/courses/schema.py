@@ -1,3 +1,17 @@
+from graphene import relay
+from graphene_django.filter import DjangoFilterConnectionField
+
+from . import types
+
+
+class CourseQueries(object):
+    course = relay.Node.Field(types.CourseNode)
+    all_courses = DjangoFilterConnectionField(types.CourseNode)
+
+    course_translations = relay.Node.Field(types.CourseTranslationNode)
+    all_courses_translations = DjangoFilterConnectionField(types.CourseTranslationNode)
+
+
 # import graphene
 #
 # from give_core.graphql.core.mutations import ModelMutation

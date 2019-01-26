@@ -1,11 +1,11 @@
 
-import pytest
-from graphql_relay import to_global_id
-from graphene_django.registry import get_global_registry
+# import pytest
+# from graphql_relay import to_global_id
+# from graphene_django.registry import get_global_registry
 
-from give_core.graphql.schema.schema import api_schema
-from graphene.test import Client
-from give_core.charity import models
+# from give_core.graphql.schema.schema import api_schema
+# from graphene.test import Client
+# from give_core.charity import models
 
 
 # registry = get_global_registry()
