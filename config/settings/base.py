@@ -72,9 +72,12 @@ THIRD_PARTY_APPS = [
     'graphene_django',
 ]
 LOCAL_APPS = [
-    'learn_islam.users.apps.UsersAppConfig',
-    'learn_islam.tracks.apps.TracksAppConfig',
+    'learn_islam.chapters.apps.ChaptersAppConfig',
     'learn_islam.courses.apps.CoursesAppConfig',
+    'learn_islam.quizzes.apps.QuizzesAppConfig',
+    'learn_islam.topics.apps.TopicsAppConfig',
+    'learn_islam.tracks.apps.TracksAppConfig',
+    'learn_islam.users.apps.UsersAppConfig',
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

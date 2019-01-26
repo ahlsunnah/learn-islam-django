@@ -7,7 +7,7 @@ from django.views import defaults as default_views
 from django.views.decorators.csrf import csrf_exempt
 from graphene_django.views import GraphQLView
 
-from learn_islam.graphql.schema.schema import schema
+from learn_islam.graphql.schema import schema
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
@@ -29,7 +29,7 @@ urlpatterns = [
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
 
-urlpatterns = [
+urlpatterns += [
     path('graphql', csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema)), name='graphql_api'),
     # Your stuff: custom urls includes go here
 ]
