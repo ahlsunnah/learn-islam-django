@@ -25,6 +25,11 @@ class Course(models.Model):
     def __str__(self):
         return self.slug
 
+    @property
+    def quiz_difficulties(self):
+        one_quiz_by_difficulty = self.quiz_set.order_by('difficulty').distinct('difficulty')
+        return list(map(lambda quiz: quiz.difficulty, one_quiz_by_difficulty))
+
 
 class CourseTranslation(models.Model):
     course = models.ForeignKey(

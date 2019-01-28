@@ -13,7 +13,6 @@ class Chapter(models.Model):
     )
     audio = models.URLField(_("Audio"), blank=True, max_length=255)
     duration = models.PositiveIntegerField(_("Duration"), blank=True)
-    level = models.PositiveIntegerField(_("Level"), blank=True)
     order = models.PositiveIntegerField(_("Order"), blank=True)
     slug = models.CharField(_("Slug"), blank=True, max_length=255)
 
