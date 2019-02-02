@@ -8,6 +8,9 @@ class Topic(models.Model):
     order = models.PositiveIntegerField(_("Order"), blank=True)
     slug = models.CharField(_("Slug"), blank=True, max_length=255)
 
+    class Meta:
+        ordering = ['order']
+
     def __str__(self):
         return self.slug
 

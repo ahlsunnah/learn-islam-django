@@ -7,6 +7,12 @@ class Track(models.Model):
     slug = models.CharField(_("Slug"), blank=True, max_length=255)
     soon = models.BooleanField(_("Coming Soon"), default=False, blank=True)
 
+    class Meta:
+        ordering = ['order']
+
+    def __str__(self):
+        return self.slug
+
 
 class TrackTranslation(models.Model):
     track = models.ForeignKey(
