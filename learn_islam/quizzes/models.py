@@ -18,6 +18,9 @@ class Quiz(models.Model):
     def __str__(self):
         return str(self.id) + ' ' + self.type
 
+    class Meta:
+        verbose_name_plural = 'quizzes'
+
 
 class QuizTranslation(models.Model):
     quiz = models.ForeignKey(
