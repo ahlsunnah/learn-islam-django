@@ -27,7 +27,6 @@ class ChapterTranslation(models.Model):
     chapter = models.ForeignKey(
         Chapter, related_name='translations', on_delete=models.CASCADE
     )
-    description = models.CharField(_("Description"), blank=True, max_length=500)
     locale = models.CharField(max_length=10)
     title = models.CharField(_("Title"), max_length=200)
     transcription = models.TextField(_("Transcription"), blank=True)
