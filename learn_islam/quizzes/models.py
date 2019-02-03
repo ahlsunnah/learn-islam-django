@@ -15,8 +15,8 @@ class Quiz(models.Model):
     difficulty = models.PositiveIntegerField(_("Difficulty"), blank=True)
     type = models.CharField(_("Slug"), blank=True, max_length=20)
 
-    # def __str__(self):
-    #     return self.slug
+    def __str__(self):
+        return str(self.id) + ' ' + self.type
 
 
 class QuizTranslation(models.Model):
