@@ -8,7 +8,7 @@ class QuizNode(DjangoObjectType):
     class Meta:
         interfaces = (relay.Node,)
         model = models.Quiz
-        filter_fields = ['difficulty', ]
+        filter_fields = ['difficulty', 'type' ]
 
 
 class QuizTranslationNode(DjangoObjectType):
