@@ -1,3 +1,4 @@
+import graphene
 from graphene import relay
 from graphene_django.types import DjangoObjectType
 
@@ -12,6 +13,8 @@ class TrackNode(DjangoObjectType):
 
 
 class TrackTranslationNode(DjangoObjectType):
+    locale = graphene.String()
+
     class Meta:
         interfaces = (relay.Node,)
         model = models.TrackTranslation

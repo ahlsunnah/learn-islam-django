@@ -15,6 +15,8 @@ class CourseNode(DjangoObjectType):
 
 
 class CourseTranslationNode(DjangoObjectType):
+    locale = graphene.String()
+
     class Meta:
         interfaces = (relay.Node,)
         model = models.CourseTranslation

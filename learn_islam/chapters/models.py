@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-
+from core import models as core_models
 from learn_islam.courses.models import Course
 
 
@@ -27,7 +27,7 @@ class ChapterTranslation(models.Model):
     chapter = models.ForeignKey(
         Chapter, related_name='translations', on_delete=models.CASCADE
     )
-    locale = models.CharField(max_length=10)
+    locale = core_models.LocaleField()
     title = models.CharField(_("Title"), max_length=200)
     transcription = models.TextField(_("Transcription"), blank=True)
     video = models.CharField(_("Video"), max_length=200)

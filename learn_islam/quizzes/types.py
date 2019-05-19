@@ -15,6 +15,8 @@ class QuizNode(DjangoObjectType):
 
 
 class QuizTranslationNode(DjangoObjectType):
+    locale = graphene.String()
+
     class Meta:
         interfaces = (relay.Node,)
         model = models.QuizTranslation

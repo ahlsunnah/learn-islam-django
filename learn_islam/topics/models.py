@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from core import models as core_models
 
 
 class Topic(models.Model):
@@ -19,7 +20,7 @@ class TopicTranslation(models.Model):
     topic = models.ForeignKey(
         Topic, related_name='translations', on_delete=models.CASCADE
     )
-    locale = models.CharField(max_length=10)
+    locale = core_models.LocaleField()
     title = models.CharField(_("Title"), max_length=20)
 
     class Meta:

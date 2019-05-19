@@ -1,7 +1,7 @@
 from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-
+from core import models as core_models
 from learn_islam.courses.models import Course
 
 
@@ -34,7 +34,8 @@ class QuizTranslation(models.Model):
         Quiz, related_name='translations', on_delete=models.CASCADE
     )
     data = JSONField()
-    locale = models.CharField(max_length=10)
+    # locale = models.CharField(choices=LANGUAGES_CHOICES, max_length=10)
+    locale = core_models.LocaleField()
 
     class Meta:
         unique_together = (('locale', 'quiz'),)

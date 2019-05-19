@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-
+from core import models as core_models
 from learn_islam.topics.models import Topic
 from learn_islam.tracks.models import Track
 
@@ -39,7 +39,7 @@ class CourseTranslation(models.Model):
         Course, related_name='translations', on_delete=models.CASCADE
     )
     description = models.CharField(_("Description"), blank=True, max_length=500)
-    locale = models.CharField(max_length=10)
+    locale = core_models.LocaleField()
     title = models.CharField(_("Title"), max_length=200)
 
     class Meta:
