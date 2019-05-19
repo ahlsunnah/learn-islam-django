@@ -1,0 +1,30 @@
+<div id="{{ widget.name }}">
+  <input type="text" name="{{ widget.name }}" :value="value" />
+  <quiz-data name="{{ widget.name }}" :type="type" v-model="value"></quiz-data>
+</div>
+{% autoescape off %}
+<script>
+  // A useless component is displayed if we don't add this condition
+  if ('{{ widget.name }}'.includes('__prefix__') == false) {
+    new Vue({
+      el: '#{{ widget.name }}',
+      data() {
+        return {
+          type: null,
+          value: `{{ widget.value }}`
+            .replace('\n', '\\n')
+            .replace(/^"/, '')
+            .replace(/"$/, ''),
+        };
+      },
+      created() {
+        const select = document.getElementById('id_type');
+        this.type = select.value;
+        select.addEventListener('change', (e) => {
+          this.type = e.target.value;
+        });
+      },
+    });
+  }
+</script>
+{% endautoescape %}

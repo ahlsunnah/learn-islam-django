@@ -6,6 +6,13 @@ from learn_islam.courses.models import Course
 
 
 class Quiz(models.Model):
+    TYPES_CHOICES = [
+        ('choose', 'Choose the correct answer'),
+        ('fill-in-the-blank', 'Fill in the blank'),
+        ('link-the-sentences', 'Link the matching sentences'),
+        ('choose-a-category', 'Choose the correct category'),
+        ('true-or-false', 'Answer by true or false'),
+    ]
     course = models.ForeignKey(
         Course,
         null=True,
@@ -13,7 +20,7 @@ class Quiz(models.Model):
         on_delete=models.SET_NULL
     )
     difficulty = models.PositiveIntegerField(_("Difficulty"), blank=True)
-    type = models.CharField(_("Slug"), blank=True, max_length=20)
+    type = models.CharField(_("Type"), choices=TYPES_CHOICES, blank=True, max_length=20)
 
     def __str__(self):
         return str(self.id) + ' ' + self.type

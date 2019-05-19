@@ -1,10 +1,12 @@
 from django.contrib import admin
 
 from .models import Quiz, QuizTranslation
+from .forms import QuizTranslationForm
 
 
 class QuizTranslationInline(admin.TabularInline):
     model = QuizTranslation
+    form = QuizTranslationForm
     fields = ('locale', 'data')
     ordering = ('locale',)
     min_num = 2
