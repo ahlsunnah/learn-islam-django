@@ -40,7 +40,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "learn_islam"
-copyright = """2019, Mohamed El Hachimi, Abumalick Hilson"""
+copyright = """2019, Mohamed El Hachimi, Abdullah Hilson"""
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -184,7 +184,7 @@ latex_documents = [
         "index",
         "learn_islam.tex",
         "learn_islam Documentation",
-        """Mohamed El Hachimi, Abumalick Hilson""",
+        """Mohamed El Hachimi, Abdullah Hilson""",
         "manual",
     )
 ]
@@ -219,7 +219,7 @@ man_pages = [
         "index",
         "learn_islam",
         "learn_islam Documentation",
-        ["""Mohamed El Hachimi, Abumalick Hilson"""],
+        ["""Mohamed El Hachimi, Abdullah Hilson"""],
         1,
     )
 ]
@@ -238,7 +238,7 @@ texinfo_documents = [
         "index",
         "learn_islam",
         "learn_islam Documentation",
-        """Mohamed El Hachimi, Abumalick Hilson""",
+        """Mohamed El Hachimi, Abdullah Hilson""",
         "learn_islam",
         """Behold My Awesome Project!""",
         "Miscellaneous",

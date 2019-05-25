@@ -6,6 +6,9 @@ Behold My Awesome Project!
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
      :alt: Built with Cookiecutter Django
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+     :target: https://github.com/ambv/black
+     :alt: Black code style
 
 
 Settings
@@ -73,7 +76,7 @@ To run a celery worker:
 .. code-block:: bash
 
     cd learn_islam
-    celery -A learn_islam.taskapp worker -l info
+    celery -A config.celery_app worker -l info
 
 Please note: For Celery's import magic to work, it is important *where* the celery commands are run. If you are in the same folder with *manage.py*, you should be right.
 

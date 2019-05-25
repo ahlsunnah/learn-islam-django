@@ -1,7 +1,7 @@
 from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from core import models as core_models
+from learn_islam.core import models as core_models
 from learn_islam.courses.models import Course
 
 
