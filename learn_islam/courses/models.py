@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from core import models as core_models
+from learn_islam.core import models as core_models
 from learn_islam.topics.models import Topic
 from learn_islam.tracks.models import Track
 

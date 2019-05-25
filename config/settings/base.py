@@ -75,6 +75,7 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     'learn_islam.chapters.apps.ChaptersAppConfig',
+    'learn_islam.core.apps.CoreAppConfig',
     'learn_islam.courses.apps.CoursesAppConfig',
     'learn_islam.quizzes.apps.QuizzesAppConfig',
     'learn_islam.topics.apps.TopicsAppConfig',
