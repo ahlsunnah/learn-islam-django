@@ -1,5 +1,12 @@
 import logging
 
+import sentry_sdk
+
+from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.logging import LoggingIntegration
+from sentry_sdk.integrations.celery import CeleryIntegration
+
+
 from .base import *  # noqa
 from .base import env
 
@@ -27,7 +34,7 @@ CACHES = {
             # Mimicing memcache behavior.
             # http://niwinz.github.io/django-redis/latest/#_memcached_exceptions_behavior
             'IGNORE_EXCEPTIONS': True,
-        }
+        },
     }
 }
 
@@ -46,11 +53,15 @@ CSRF_COOKIE_SECURE = True
 # TODO: set this to 60 seconds first and then to 518400 once you prove the former works
 SECURE_HSTS_SECONDS = 60
 # https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-include-subdomains
-SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool('DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS', default=True)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
+    'DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS', default=True
+)
 # https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-preload
 SECURE_HSTS_PRELOAD = env.bool('DJANGO_SECURE_HSTS_PRELOAD', default=True)
 # https://docs.djangoproject.com/en/dev/ref/middleware/#x-content-type-options-nosniff
-SECURE_CONTENT_TYPE_NOSNIFF = env.bool('DJANGO_SECURE_CONTENT_TYPE_NOSNIFF', default=True)
+SECURE_CONTENT_TYPE_NOSNIFF = env.bool(
+    'DJANGO_SECURE_CONTENT_TYPE_NOSNIFF', default=True
+)
 
 # STORAGES
 # ------------------------------------------------------------------------------
@@ -79,6 +90,8 @@ STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/static/'
 
 # MEDIA
 # ------------------------------------------------------------------------------
+MEDIA_URL = 'https://storage.googleapis.com/{}/media/'.format(GS_BUCKET_NAME)
+MEDIA_ROOT = 'https://storage.googleapis.com/{}/media/'.format(GS_BUCKET_NAME)
 
 # region http://stackoverflow.com/questions/10390244/
 # Full-fledge class: https://stackoverflow.com/a/18046120/104731
@@ -107,21 +120,22 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [  # noqa F405
         [
             'django.template.loaders.filesystem.Loader',
             'django.template.loaders.app_directories.Loader',
-        ]
-    ),
+        ],
+    )
 ]
 
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
 DEFAULT_FROM_EMAIL = env(
-    'DJANGO_DEFAULT_FROM_EMAIL',
-    default='learn_islam <noreply@example.com>'
+    'DJANGO_DEFAULT_FROM_EMAIL', default='learn_islam <noreply@example.com>'
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
 SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-subject-prefix
-EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[learn_islam]')
+EMAIL_SUBJECT_PREFIX = env(
+    'DJANGO_EMAIL_SUBJECT_PREFIX', default='[learn_islam]'
+)
 
 # ADMIN
 # ------------------------------------------------------------------------------
@@ -136,7 +150,7 @@ EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
 # https://anymail.readthedocs.io/en/stable/installation/#anymail-settings-reference
 ANYMAIL = {
     'MAILGUN_API_KEY': env('MAILGUN_API_KEY'),
-    'MAILGUN_SENDER_DOMAIN': env('MAILGUN_DOMAIN')
+    'MAILGUN_SENDER_DOMAIN': env('MAILGUN_DOMAIN'),
 }
 
 # Gunicorn
@@ -149,67 +163,58 @@ INSTALLED_APPS += ['gunicorn']  # noqa F405
 INSTALLED_APPS = ['collectfast'] + INSTALLED_APPS  # noqa F405
 AWS_PRELOAD_METADATA = True
 
-# raven
+# LOGGING
 # ------------------------------------------------------------------------------
-# https://docs.sentry.io/clients/python/integrations/django/
-INSTALLED_APPS += ['raven.contrib.django.raven_compat']  # noqa F405
-MIDDLEWARE = ['raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware'] + MIDDLEWARE
+# https://docs.djangoproject.com/en/dev/ref/settings/#logging
+# See https://docs.djangoproject.com/en/dev/topics/logging for
+# more details on how to customize your logging configuration.
 
-# Sentry
-# ------------------------------------------------------------------------------
-SENTRY_DSN = env('SENTRY_DSN')
-SENTRY_CLIENT = env('DJANGO_SENTRY_CLIENT', default='raven.contrib.django.raven_compat.DjangoClient')
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
-    'root': {
-        'level': 'WARNING',
-        'handlers': ['sentry'],
-    },
     'formatters': {
         'verbose': {
             'format': '%(levelname)s %(asctime)s %(module)s '
-                      '%(process)d %(thread)d %(message)s'
-        },
+            '%(process)d %(thread)d %(message)s'
+        }
     },
     'handlers': {
-        'sentry': {
-            'level': 'ERROR',
-            'class': 'raven.contrib.django.raven_compat.handlers.SentryHandler',
-        },
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
+            'formatter': 'verbose',
         }
     },
+    'root': {'level': 'INFO', 'handlers': ['console']},
     'loggers': {
         'django.db.backends': {
             'level': 'ERROR',
             'handlers': ['console'],
             'propagate': False,
         },
-        'raven': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-            'propagate': False,
-        },
-        'sentry.errors': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-            'propagate': False,
-        },
+        # Errors logged by the SDK itself
+        'sentry_sdk': {'level': 'ERROR', 'handlers': ['console'], 'propagate': False},
         'django.security.DisallowedHost': {
             'level': 'ERROR',
-            'handlers': ['console', 'sentry'],
+            'handlers': ['console'],
             'propagate': False,
         },
     },
 }
 
-SENTRY_CELERY_LOGLEVEL = env.int('DJANGO_SENTRY_LOG_LEVEL', logging.INFO)
-RAVEN_CONFIG = {
-    'dsn': SENTRY_DSN
-}
+# Sentry
+# ------------------------------------------------------------------------------
+SENTRY_DSN = env('SENTRY_DSN')
+SENTRY_LOG_LEVEL = env.int('DJANGO_SENTRY_LOG_LEVEL', logging.INFO)
+
+sentry_logging = LoggingIntegration(
+    level=SENTRY_LOG_LEVEL,  # Capture info and above as breadcrumbs
+    event_level=logging.ERROR,  # Send errors as events
+)
+sentry_sdk.init(
+    dsn=SENTRY_DSN,
+    integrations=[sentry_logging, DjangoIntegration(), CeleryIntegration()],
+)
+
 # Your stuff...
 # ------------------------------------------------------------------------------
