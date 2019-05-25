@@ -90,8 +90,7 @@ STATIC_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/static/'
 
 # MEDIA
 # ------------------------------------------------------------------------------
-MEDIA_URL = 'https://storage.googleapis.com/{}/media/'.format(GS_BUCKET_NAME)
-MEDIA_ROOT = 'https://storage.googleapis.com/{}/media/'.format(GS_BUCKET_NAME)
+
 
 # region http://stackoverflow.com/questions/10390244/
 # Full-fledge class: https://stackoverflow.com/a/18046120/104731
