@@ -21,6 +21,7 @@ class Quiz(models.Model):
     )
     difficulty = models.PositiveIntegerField(_("Difficulty"), blank=True)
     type = models.CharField(_("Type"), choices=TYPES_CHOICES, blank=True, max_length=20)
+    pub_date = models.DateTimeField(verbose_name="Publication date", auto_now_add=True)
 
     def __str__(self):
         return str(self.id) + ' ' + self.type
