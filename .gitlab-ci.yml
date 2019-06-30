@@ -21,6 +21,7 @@ variables:
   CELERY_FLOWER_USER: 'debug'
   CELERY_FLOWER_PASSWORD: 'debug'
   REDIS_URL: 'redis://redis:6379/0'
+  CELERY_BROKER_URL: 'TODO'
 
 # This folder is cached between builds
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
