@@ -1,4 +1,4 @@
-learn_islam
+learn_islam django
 ===========
 
 Behold My Awesome Project!
