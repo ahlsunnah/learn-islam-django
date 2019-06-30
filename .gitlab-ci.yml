@@ -22,20 +22,23 @@ variables:
   CELERY_FLOWER_PASSWORD: 'debug'
   REDIS_URL: 'redis://redis:6379/0'
   CELERY_BROKER_URL: 'TODO'
+  PIP_CACHE_DIR: '.cache/pip'
+  PIPENV_CACHE_DIR: '.cache/pipenv'
+  PIPENV_VENV_IN_PROJECT: true
 
 # This folder is cached between builds
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
 cache:
   paths:
-    - ~/.cache
-    - ~/.local/lib/python3.7/site-packages
+    - .cache
+    - .venv
 
 # This is a basic example for a gem or script which doesn't use
 # services such as redis or postgres
 before_script:
   - python -V # Print out python version for debugging
-  - pipenv install --system --deploy --dev
+  - pipenv install --deploy --dev
 
 test:
   script:
-    - python manage.py test
+    - pipenv run python manage.py test
