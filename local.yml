@@ -19,7 +19,7 @@ services:
       - ./.envs/.local/.django
       - ./.envs/.local/.postgres
     ports:
-      - "8000:8000"
+      - '8080:8000'
     command: /start
 
   postgres:
@@ -27,6 +27,8 @@ services:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
     image: learn_islam_production_postgres
+    ports:
+      - '8032:5432'
     volumes:
       - local_postgres_data:/var/lib/postgresql/data
       - local_postgres_data_backups:/backups
@@ -36,7 +38,7 @@ services:
   mailhog:
     image: mailhog/mailhog:v1.0.0
     ports:
-      - "8025:8025"
+      - '8025:8025'
 
   redis:
     image: redis:3.2
@@ -65,5 +67,5 @@ services:
     <<: *django
     image: learn_islam_local_flower
     ports:
-      - "5555:5555"
+      - '5555:5555'
     command: /start-flower
