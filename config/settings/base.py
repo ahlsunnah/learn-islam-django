@@ -72,6 +72,7 @@ THIRD_PARTY_APPS = [
     'corsheaders',
     'graphene',
     'graphene_django',
+    'django_celery_beat',
 ]
 LOCAL_APPS = [
     'learn_islam.chapters.apps.ChaptersAppConfig',
@@ -278,6 +279,8 @@ CELERYD_TASK_TIME_LIMIT = 5 * 60
 # http://docs.celeryproject.org/en/latest/userguide/configuration.html#task-soft-time-limit
 # TODO: set to whatever value is adequate in your circumstances
 CELERYD_TASK_SOFT_TIME_LIMIT = 60
+# http://docs.celeryproject.org/en/latest/userguide/configuration.html#beat-scheduler
+CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 # django-allauth
 # ------------------------------------------------------------------------------
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)

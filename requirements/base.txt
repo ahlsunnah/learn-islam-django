@@ -4,6 +4,7 @@ Pillow==6.0.0  # https://github.com/python-pillow/Pillow
 argon2-cffi==19.1.0  # https://github.com/hynek/argon2_cffi
 redis==3.2.1  # https://github.com/antirez/redis
 celery==4.3.0  # pyup: < 5.0  # https://github.com/celery/celery
+django-celery-beat==1.5.0
 flower==0.9.3  # https://github.com/mher/flower
 
 # Django
