@@ -50,7 +50,7 @@ sentry-sdk = "*"
 django-storages = {extras = ["boto3"],version = "~=1.7.1"}
 django-anymail = {extras = ["mailgun"],version = "~=6.0.1"}
 Pillow = "~=6.0.0"
-Django = "~=2.1.8"
+Django = "~=2.1.10"
 Collectfast = "~=0.6.2"
 
 [requires]
