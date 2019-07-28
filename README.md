@@ -4,9 +4,9 @@
 <img src="https://img.shields.io/circleci/build/github/ahlsunnah/learn-islam-django?label=tests&style=plastic" alt="Current CircleCI build status." />
 </a>
 
-![image](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg%0A%20%20:target:%20https://github.com/pydanny/cookiecutter-django/%0A%20%20:alt:%20Built%20with%20Cookiecutter%20Django)
-
-![image](https://img.shields.io/badge/code%20style-black-000000.svg%0A%20%20:target:%20https://github.com/ambv/black%0A%20%20:alt:%20Black%20code%20style)
+<a href="https://circleci.com/gh/ahlsunnah/learn-islam-django">
+<img src="https://img.shields.io/circleci/build/github/ahlsunnah/learn-islam-django?label=tests&style=plastic" alt="Current CircleCI build status." />
+</a>
 
 # Settings
 
