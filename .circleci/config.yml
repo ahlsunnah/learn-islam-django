@@ -13,7 +13,7 @@ jobs: # A basic unit of work in a run
           POSTGRES_PORT: 5432
           POSTGRES_USER: debug
           POSTGRES_PASSWORD: debug
-          DATABASE_URL: postgres://debug:debug@postgres:5432/learn_islam
+          DATABASE_URL: postgresql://debug:debug@localhost:5432/learn_islam?sslmode=disable
           CELERY_FLOWER_USER: 'debug'
           CELERY_FLOWER_PASSWORD: 'debug'
           REDIS_URL: 'redis://redis:6379/0'
