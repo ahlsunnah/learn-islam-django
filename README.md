@@ -13,26 +13,36 @@
 " />
 </a>
 
-# Settings
+## Start developing with docker
 
-Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings.html).
+Before starting you will need to install docker and docker-compose to your computer
 
-# Basic Commands
+### Build and start
 
-## Setting Up Your Users
+```bash
+export COMPOSE_FILE=local.yml
+docker-compose build
+docker-compose up -d
+```
 
-- To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
-- To create an **superuser account**, use this command:
+### After that you can run commands in the container
 
-      $ python manage.py createsuperuser
-
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
-
-## Type checks
-
-Running type checks with mypy:
-
-    $ mypy learn_islam
+```bash
+# Run a bash terminal inside the app's container
+dc exec django bash
+# Run pytest
+dc exec django pytest
+# Run a python shell inside the app
+dc exec django ./manage.py shell_plus
+# Create a super user
+dc exec django ./manage.py createsuperuser
+# Run migrations
+dc exec django ./manage.py migrate
+# Create migrations
+dc exec django ./manage.py makemigrations
+# Create an empty migration
+dc exec django ./manage.py makemigrations --empty tracks
+```
 
 ## Test coverage
 
@@ -41,14 +51,6 @@ To run the tests, check your test coverage, and generate an HTML coverage report
     $ coverage run -m pytest
     $ coverage html
     $ open htmlcov/index.html
-
-### Running tests with py.test
-
-    $ pytest
-
-## Live reloading and Sass CSS compilation
-
-Moved to [Live reloading and SASS compilation](http://cookiecutter-django.readthedocs.io/en/latest/live-reloading-and-sass-compilation.html).
 
 ## Celery
 
@@ -77,14 +79,14 @@ Sentry is an error logging aggregator service. You can sign up for a free accoun
 
 You must set the DSN url in production.
 
-# Deployment
+## Deployment
 
 The following details how to deploy this application.
 
-## Heroku
+### Heroku
 
 See detailed [cookiecutter-django Heroku documentation](http://cookiecutter-django.readthedocs.io/en/latest/deployment-on-heroku.html).
 
-## Docker
+### Docker
 
 See detailed [cookiecutter-django Docker documentation](http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html).
