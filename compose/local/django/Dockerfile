@@ -1,4 +1,4 @@
-FROM abumalick/alpine-python-pipenv-postgres:latest
+FROM ahlsunnah/alpine-python-pipenv-postgres:latest
 
 RUN mkdir /app
 WORKDIR /app
