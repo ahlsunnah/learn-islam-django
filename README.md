@@ -1,11 +1,16 @@
 # Learn Islam django
 
-<a href="https://circleci.com/gh/ahlsunnah/learn-islam-django">
+<a href="https://circleci.com/gh/ahlsunnah/learn-islam-django" title="Current CircleCI build status.">
 <img src="https://img.shields.io/circleci/build/github/ahlsunnah/learn-islam-django?label=tests&style=plastic" alt="Current CircleCI build status." />
 </a>
 
-<a href="https://circleci.com/gh/ahlsunnah/learn-islam-django">
-<img src="https://img.shields.io/circleci/build/github/ahlsunnah/learn-islam-django?label=tests&style=plastic" alt="Current CircleCI build status." />
+<a href="https://github.com/pydanny/cookiecutter-django/" title="Built with Cookiecutter Django">
+<img src="https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg" alt="Built with Cookiecutter Django" />
+</a>
+
+<a href="https://github.com/ambv/black" title="Black code style">
+<img src="https://img.shields.io/badge/code%20style-Black-000000.svg" alt="Black code style
+" />
 </a>
 
 # Settings
