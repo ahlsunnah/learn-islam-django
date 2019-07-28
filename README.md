@@ -1,12 +1,8 @@
-learn_islam django ===========
-
-Behold My Awesome Project!
+# Learn Islam django
 
 <a href="https://circleci.com/gh/ahlsunnah/learn-islam-django">
 <img src="https://img.shields.io/circleci/build/github/ahlsunnah/learn-islam-django?label=tests&style=plastic" alt="Current CircleCI build status." />
 </a>
-
-![CircleCI](https://img.shields.io/circleci/build/github/ahlsunnah/learn-islam-django?label=tests&style=plastic)
 
 ![image](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg%0A%20%20:target:%20https://github.com/pydanny/cookiecutter-django/%0A%20%20:alt:%20Built%20with%20Cookiecutter%20Django)
 
