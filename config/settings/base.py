@@ -82,6 +82,7 @@ LOCAL_APPS = [
     'learn_islam.topics.apps.TopicsAppConfig',
     'learn_islam.tracks.apps.TracksAppConfig',
     'learn_islam.users.apps.UsersConfig',
+    'learn_islam.progress.apps.ProgressConfig'
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
