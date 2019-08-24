@@ -1,20 +1,26 @@
 {
-  "extends": ["config:base"],
-  "automerge": true,
-  "automergeType": "branch",
+  "extends": [
+    "config:base",
+    ":automergePatch",
+    ":automergeMinor",
+    ":disableRateLimiting"
+  ],
+  "minor": {
+    "automergeType": "pr"
+  },
+  "major": {
+    "automergeType": "pr",
+    "masterIssueApproval": true
+  },
+  "patch": {
+    "automergeType": "branch"
+  },
   "masterIssue": true,
   "masterIssueAutoclose": true,
   "pipenv": { "enabled": true },
   "rangeStrategy": "bump",
   "vulnerabilityAlerts": {
+    "enabled": "true",
     "labels": ["security"]
-  },
-  "minor": {
-    "automergeType": "pr"
-  },
-  "major": {
-    "automerge": false,
-    "automergeType": "pr",
-    "masterIssueApproval": true
   }
 }
