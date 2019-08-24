@@ -1,12 +1,17 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "automerge": true,
   "automergeType": "branch",
   "masterIssue": true,
+  "masterIssueAutoclose": true,
   "pipenv": { "enabled": true },
   "rangeStrategy": "bump",
+  "vulnerabilityAlerts": {
+    "labels": ["security"]
+  },
+  "minor": {
+    "automergeType": "pr"
+  },
   "major": {
     "automerge": false,
     "automergeType": "pr",
