@@ -20,7 +20,7 @@
   "pipenv": { "enabled": true },
   "rangeStrategy": "bump",
   "vulnerabilityAlerts": {
-    "enabled": "true",
+    "enabled": true,
     "labels": ["security"]
   }
 }
