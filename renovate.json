@@ -5,6 +5,7 @@
   "automerge": true,
   "automergeType": "branch",
   "masterIssue": true,
+  "pipenv": { "enabled": true },
   "rangeStrategy": "bump",
   "major": {
     "automerge": false,
