@@ -2,17 +2,13 @@
   "extends": [
     "config:base"
   ],
-   "major": {
-    "automerge": false,
-    "automergeType": "pr"
-    "masterIssueApproval": true
-  },
   "automerge": true,
-  "automergeType": "branch"
+  "automergeType": "branch",
   "masterIssue": true,
   "rangeStrategy": "bump",
-
   "major": {
-    "automerge": false
-  }
+    "automerge": false,
+    "automergeType": "pr",
+    "masterIssueApproval": true
+  },
 }
