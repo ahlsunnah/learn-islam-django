@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b76d80d095e5c6293510caa36da0900fe0c7fcdb7c20f5fcdd633b159d1f30d8"
+            "sha256": "c9c7ee8fdf46f5f345e7f1e345b413b2bf5492bc6fd0a7d29d5e836e5a4a1aa8"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -1137,11 +1137,11 @@
         },
         "pylint-django": {
             "hashes": [
-                "sha256:9bdb0e022b19881218a25ffb8ad05e83b83bc5cdbc58e5ee8ffbe99965193f6c",
-                "sha256:9eea6a026eaa5ecfad5fed7a33faf77ef55a43cc78afbcaf2f6ddd071156b3f8"
+                "sha256:440beb814464928aedd2e21196bb6e47a83b63e2cbe886a701ba0f4a64206bbb",
+                "sha256:d5d113605a64cf0e638b707d4cb42106e626f8851bc30a44d5b22bd698ad8483"
             ],
             "index": "pypi",
-            "version": "==2.0.12"
+            "version": "==2.0.13"
         },
         "pylint-plugin-utils": {
             "hashes": [
