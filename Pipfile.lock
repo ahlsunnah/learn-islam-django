@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6a03483bfb3388c4fbba3f2c8cadd1547367a58d0bc9e54b9c1f9a801ec61703"
+            "sha256": "1a83d28decf4a8d44f00cfb27418a8aaeb78217c4d4d5c2d2052850872cdc423"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -70,17 +70,17 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:bbfc33584b10a1d245db8538f7fa728f54f35a953eb7dc74037ed8401acd309f",
-                "sha256:d9da982bfe358d6ebc21177035c0f6489e356a1b5a80bb90b8b2b9d787ff8fb6"
+                "sha256:259b795fc577ba0c8c085509d18bc7b9a7c7e813c93c2d72278affb922f64d8d",
+                "sha256:cf887435085e90ab2fdce50ea77b4569b8728faf9a8d86b16f382161af6bd441"
             ],
-            "version": "==1.10.29"
+            "version": "==1.10.30"
         },
         "botocore": {
             "hashes": [
-                "sha256:37d2381ecd3843a4f5f2dbf86411ba834baf23988c9824d607b6cf6fbd684583",
-                "sha256:ef1cc8fe86c4a04d1d8832fffc2ba08150c8d1b30ce8bb62b93b5a69bde20f6d"
+                "sha256:9857929cab4366badda0cc9d2066bb1f71269344ef7523186f6a1b26924bbc15",
+                "sha256:ced50943d83d7007fe02b91739e849f36b64ed5c5ab7af3b771bff21aca554a7"
             ],
-            "version": "==1.13.29"
+            "version": "==1.13.30"
         },
         "celery": {
             "hashes": [
@@ -275,10 +275,10 @@
         },
         "django-timezone-field": {
             "hashes": [
-                "sha256:1a7bbcf984ae191c6dfe713994b4ff4062dc21e47a909356c93e76d027c87c8f",
-                "sha256:a25af66b86d13709aa8c69a361c1ea68322cda64b5bbf9141fb67b8b44aa4e43"
+                "sha256:758b7d41084e9ea2e89e59eb616e9b6326e6fbbf9d14b6ef062d624fe8cc6246",
+                "sha256:7e3620fe2211c2d372fad54db8f86ff884098d018d56fda4dca5e64929e05ffc"
             ],
-            "version": "==3.1"
+            "version": "==4.0"
         },
         "djangorestframework": {
             "hashes": [
@@ -890,10 +890,10 @@
         },
         "ipdb": {
             "hashes": [
-                "sha256:473fdd798a099765f093231a8b1fabfa95b0b682fce12de0c74b61a4b4d8ee57"
+                "sha256:5d9a4a0e3b7027a158fc6f2929934341045b9c3b0b86ed5d7e84e409653f72fd"
             ],
             "index": "pypi",
-            "version": "==0.12.2"
+            "version": "==0.12.3"
         },
         "ipython": {
             "hashes": [
