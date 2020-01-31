@@ -50,7 +50,7 @@ Pillow = "~=6.2.2"
 psycopg2 = "~=2.8.4"
 python-slugify = "~=3.0.6"
 pytz = "~=2019.3"
-redis = "~=3.3.11"
+redis = "~=3.4.0"
 sentry-sdk = "*"
 
 [requires]
