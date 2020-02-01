@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8a8d6dc06999e1a95b32abeccbab02e4faddecfea4feda84daef563df0ae8fad"
+            "sha256": "33c13ee2ff1e0d062ddfcc9fd5d257b232c3e72b2daf8f41fc0069d64447776b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -200,11 +200,11 @@
         },
         "django-celery-beat": {
             "hashes": [
-                "sha256:61c92d4b600a9f24406ee0b8d01a9b192253e15d047e3325e1d81e2cacf7aba6",
-                "sha256:659b39232c454ac27022bf679939bce0471fd482f3ee9276f5199716cb4afad9"
+                "sha256:76c493d9aea5ffb41a8ad3f7e9d74ffd55de6f095e12f5d419b053a0c0cd42be",
+                "sha256:915089386ea58bc43f5059523d935beb7073382bf47ccc276658469718a8a5f6"
             ],
             "index": "pypi",
-            "version": "==1.5.0"
+            "version": "==1.6.0"
         },
         "django-cors-headers": {
             "hashes": [
@@ -275,10 +275,10 @@
         },
         "django-timezone-field": {
             "hashes": [
-                "sha256:758b7d41084e9ea2e89e59eb616e9b6326e6fbbf9d14b6ef062d624fe8cc6246",
-                "sha256:7e3620fe2211c2d372fad54db8f86ff884098d018d56fda4dca5e64929e05ffc"
+                "sha256:1a7bbcf984ae191c6dfe713994b4ff4062dc21e47a909356c93e76d027c87c8f",
+                "sha256:a25af66b86d13709aa8c69a361c1ea68322cda64b5bbf9141fb67b8b44aa4e43"
             ],
-            "version": "==4.0"
+            "version": "==3.1"
         },
         "djangorestframework": {
             "hashes": [
@@ -892,10 +892,10 @@
         },
         "ipython": {
             "hashes": [
-                "sha256:0f4bcf18293fb666df8511feec0403bdb7e061a5842ea6e88a3177b0ceb34ead",
-                "sha256:387686dd7fc9caf29d2fddcf3116c4b07a11d9025701d220c589a430b0171d8a"
+                "sha256:d9459e7237e2e5858738ff9c3e26504b79899b58a6d49e574d352493d80684c6",
+                "sha256:f6689108b1734501d3b59c84427259fd5ac5141afe2e846cfa8598eb811886c9"
             ],
-            "version": "==7.11.1"
+            "version": "==7.12.0"
         },
         "ipython-genutils": {
             "hashes": [

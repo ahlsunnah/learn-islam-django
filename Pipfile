@@ -30,7 +30,7 @@ coreapi = "~=2.3.3"
 Django = "~=2.2.9"
 django-allauth = "~=0.41.0"
 django-anymail = {extras = ["mailgun"],version = "~=7.0.0"}
-django-celery-beat = "~=1.5.0"
+django-celery-beat = "~=1.6.0"
 django-cors-headers = "~=3.2.1"
 django-crispy-forms = "~=1.8.1"
 django-environ = "~=0.4.5"
